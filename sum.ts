@@ -1,15 +1,28 @@
 
-interface person {
+interface personInterface {
     name: string,
     age: number,
+    greet(): string
 }
 
+class person implements personInterface{
+    name: string;
+    age: number;
 
-export function greet (person: person ): string{
-   return ("hello mister "+ person.name +" glad you are now "+ person.age + " now")
+    constructor(name:string, age: number){
+        this.name = name;
+        this.age = age;
+
+    }
+
+    greet(){
+        return "hi mr." +this.name;
+    }
 }
 
-console.log(greet({
-    name: "kanhaiya",
-    age: 21
-}));
+const personObject = new person("kanhaiya", 21)
+console.log(personObject.greet());
+
+
+
+

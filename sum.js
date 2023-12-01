@@ -1,7 +1,12 @@
-export function greet(person) {
-    return ("hello mister " + person.name + " glad you are now " + person.age + " years old");
+"use strict";
+class person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    greet() {
+        return "hi mr." + this.name;
+    }
 }
-console.log(greet({
-    name: "kanhaiya",
-    age: 21
-}));
+const personObject = new person("kanhaiya", 21);
+console.log(personObject.greet());
