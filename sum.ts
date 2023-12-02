@@ -1,27 +1,38 @@
 
-interface personInterface {
-    name: string,
-    age: number,
-    greet(): string
+
+
+                         /*  types are usefull in union and ors */
+import { Circle } from "../../../node_modules/@mui/icons-material/index"
+
+ 
+
+
+interface circle {
+    radius : number
+
 }
 
-class person implements personInterface{
-    name: string;
-    age: number;
+interface rectangle {
+    length : number
+    width: number
 
-    constructor(name:string, age: number){
-        this.name = name;
-        this.age = age;
-
-    }
-
-    greet(){
-        return "hi mr." +this.name;
-    }
+}
+interface square {
+    length : number
 }
 
-const personObject = new person("kanhaiya", 21)
-console.log(personObject.greet());
+type shape = circle | rectangle | square ;
+
+function render (shape: shape){
+    console.log("renderd");
+    
+}
+
+render({
+    length: 10,
+    width: 5,
+    radius: 10,
+})
 
 
 

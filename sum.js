@@ -1,12 +1,9 @@
-"use strict";
-class person {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
-    greet() {
-        return "hi mr." + this.name;
-    }
+function render(shape) {
+    console.log("renderd");
 }
-const personObject = new person("kanhaiya", 21);
-console.log(personObject.greet());
+render({
+    length: 10,
+    width: 5,
+    radius: 10,
+});
+export {};
